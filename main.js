@@ -1,14 +1,15 @@
 
 var Translator = (function(){
-  var selectedLanguage = document.getElementById('language');
-  var textEntered = document.getElementById('card-input');
+  var lanuageSelector = document.getElementById('language');
+  var cardInput = document.getElementById('card-input');
   var button = document.getElementById("button");
+  var addMessage = document.getElementById('translated-text');
 
   function getInput(){
-    textEntered = textEntered.value;
-    selectedLanguage = selectedLanguage.value;
-    //Translator[translateTo + selectedLanguage](textEntered);
-    Translator.translateToSpanish(textEntered);
+    var textEntered = cardInput.value;
+    var selectedLanguage = lanuageSelector.value;
+
+    addMessage.innerHTML = `<marquee> ${Translator['translateTo' + selectedLanguage](textEntered)} </marquee>`;
   }
 
   button.addEventListener("click", getInput);
