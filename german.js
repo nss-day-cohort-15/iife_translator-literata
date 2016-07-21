@@ -2,32 +2,30 @@
 var Translator = (function(translator){
 
     var translate = {
-      'Merry' :'Fröhlich',
       'merry' :'Fröhlich',
-      'Christmas' : 'Weihnachten',
       'christmas' : 'Weihnachten',
       'to' : 'nach',
       'you' : 'Sie',
-      'Happy' : 'Glücklich',
       'happy' : 'Glücklich',
-      'New' : 'Neu',
       'new' : 'Neu',
-      'Year' : 'Jahr',
       'year' : 'Jahr'
     }
 
     translator.translateToGerman = function(text){
-      var array = text.split(' ');
+      var textArray = text.split(' ');
+          textArray = textArray.map(e => e.split(/(\W)/));
 
-        var german = array.map(function(w){
-        for(var k in translate){
-          if(k === w){
-            w = translate[k];
-          }
+      var flattened = [].concat.apply([], textArray);
+
+      var german = flattened.map(function(w){
+      for(var k in translate){
+        if(k === w.toLowerCase()){
+          w = translate[k];
         }
-         return w;
-        });
-        return german.join(' ');
+      }
+       return w;
+      });
+      return german.join(' ');
     }
 
     return translator;
