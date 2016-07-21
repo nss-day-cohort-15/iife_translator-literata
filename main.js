@@ -9,7 +9,10 @@ var Translator = (function(){
     var textEntered = cardInput.value;
     var selectedLanguage = lanuageSelector.value;
 
-    addMessage.innerHTML = `<marquee> ${Translator['translateTo' + selectedLanguage](textEntered)} </marquee>`;
+    console.log(textEntered)
+    console.log(selectedLanguage)
+
+    addMessage.innerHTML = `<h1> ${Translator['translateTo' + selectedLanguage](textEntered)} </h1>`;
   }
 
   button.addEventListener("click", getInput);

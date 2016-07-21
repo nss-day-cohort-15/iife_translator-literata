@@ -4,6 +4,8 @@ var Translator = (function(translator) {
         var translate = {
             "merry": "alegre",
             "christmas": "navidad",
+            "Merry": "Alegre",
+            "Christmas": "Navidad",
             "and": "y",
             "happy": "feliz",
             "new": "nuevo",
@@ -11,7 +13,7 @@ var Translator = (function(translator) {
         };
 
         translator.translateToSpanish = function(text) {
-            var spanish = string.split(' ');
+            var spanish = text.split(' ');
 
             for (var i = 0; i < spanish.length; i++) {
                 for (var key in translate) {
@@ -22,6 +24,6 @@ var Translator = (function(translator) {
             }
             return spanish.join(' ');
         }
-        return tranlator;
+        return translator;
 
     })(Translator);
