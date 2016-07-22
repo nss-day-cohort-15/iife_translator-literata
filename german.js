@@ -1,29 +1,20 @@
 
 var Translator = (function(translator){
 
-    // var translate = {
-    //   'merry' :'Fröhlich',
-    //   'christmas' : 'Weihnachten',
-    //   'to' : 'nach',
-    //   'you' : 'Sie',
-    //   'happy' : 'Glücklich',
-    //   'new' : 'Neu',
-    //   'year' : 'Jahr'
-    // }
-
     var translate = {
-      'merry' :`Fr&#246;hlich`,
+      'merry' :'Fr&#246;hlich',
       'christmas' : 'Weihnachten',
       'to' : 'nach',
-      'you' : 'Sie',
+      'you' : 'sie',
       'happy' : 'Gl&#252;cklich',
       'new' : 'Neu',
-      'year' : 'Jahr'
+      'year' : 'Jahr',
+      'have' : 'haben',
+      'a' : 'ein'
     }
 
     translator.translateToGerman = function(text){
-      var textArray = text.split(' ');
-          textArray = textArray.map(e => e.split(/(\W)/));
+      var textArray = text.split(' ').map(e => e.split(/(\W)/));;
 
       var flattened = [].concat.apply([], textArray);
 
@@ -35,6 +26,12 @@ var Translator = (function(translator){
       }
        return w;
       });
+
+      //var germanString = german.join(' ');
+      //    germanString = germanString.replace(/\s\W/g, germanString.match(/[^\w\s]/g)[0]);
+      //
+      //console.log(germanString);
+
       return german.join(' ');
     }
 
