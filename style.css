@@ -7,7 +7,7 @@ body {
   background: #c6403a;
 }
 
-h1 {
+h1, marquee {
   font-size: 5rem;
 }
 

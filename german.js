@@ -1,12 +1,22 @@
 
 var Translator = (function(translator){
 
+    // var translate = {
+    //   'merry' :'Fröhlich',
+    //   'christmas' : 'Weihnachten',
+    //   'to' : 'nach',
+    //   'you' : 'Sie',
+    //   'happy' : 'Glücklich',
+    //   'new' : 'Neu',
+    //   'year' : 'Jahr'
+    // }
+
     var translate = {
-      'merry' :'Fröhlich',
+      'merry' :`Fr&#246;hlich`,
       'christmas' : 'Weihnachten',
       'to' : 'nach',
       'you' : 'Sie',
-      'happy' : 'Glücklich',
+      'happy' : 'Gl&#252;cklich',
       'new' : 'Neu',
       'year' : 'Jahr'
     }
